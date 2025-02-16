@@ -1,9 +1,11 @@
 "use client";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "@mui/material";
 import "swiper/css";
+import "./style.css";
+
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
 import Image from "next/image";
 import img1 from "../../assets/scrollImages/images1.jpg";
 import img2 from "../../assets/scrollImages/images2.jpg";
@@ -25,12 +27,14 @@ import thanku5 from "../../assets/thankU/company5.jpg";
 import thanku6 from "../../assets/thankU/company6.png";
 import thanku7 from "../../assets/thankU/company7.png";
 import "animate.css"; // Import Animate.css
+// import { Style } from "/Home.css";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 // import { gsap } from "gsap";
 import Lenis from "@studio-freight/lenis";
 import { useGSAP } from "@gsap/react";
 
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
 import Slider from "react-slick";
@@ -45,6 +49,15 @@ import scholer4 from "../../assets/Scholarships/image4.jpg";
 import scholer5 from "../../assets/Scholarships/image5.jpg";
 import scholer6 from "../../assets/Scholarships/image6.jpg";
 import scholer7 from "../../assets/Scholarships/image7.jpg";
+
+// community image
+import community1 from "../../assets/Community/image1.jpg";
+import community2 from "../../assets/Community/image2.png";
+import community3 from "../../assets/Community/image3.jpg";
+import community4 from "../../assets/Community/image4.png";
+import community5 from "../../assets/Community/image5.png";
+import community6 from "../../assets/Community/image6.png";
+import community7 from "../../assets/Community/image7.png";
 
 // goals image
 import bg1 from "../../assets/Subscribe/bg.png";
@@ -241,41 +254,148 @@ const scholarships = [
   },
 ];
 
-// const impactsData = [
-//   {
-//     id: 1,
-//     title: "Tree Planting with ARCOS",
-//     image: "https://via.placeholder.com/400x280",
-//     tags: ["Council", "Featured"],
-//     createdBy: [
-//       { name: "User 1", image: "https://via.placeholder.com/28x28" },
-//       { name: "User 2", image: "https://via.placeholder.com/28x28" },
-//     ],
-//     features: [
-//       {
-//         title: "Partnerships for the goals",
-//         icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-16.svg",
-//       },
-//       {
-//         title: "Climate action",
-//         icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-12.svg",
-//       },
-//     ],
-//   },
-//   {
-//     id: 2,
-//     title: "Books for School Project",
-//     image: "https://via.placeholder.com/400x280",
-//     tags: ["Individual"],
-//     createdBy: [{ name: "User 3", image: "https://via.placeholder.com/28x28" }],
-//     features: [
-//       {
-//         title: "Quality Education",
-//         icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-3.svg",
-//       },
-//     ],
-//   },
-// ];
+const impactsData = [
+  {
+    id: 1,
+    title: "Tree Planting with ARCOS",
+    image: community1,
+    tags: ["Council", "Featured"],
+    createdBy: [
+      {
+        name: "User 1",
+        image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
+      },
+      {
+        name: "User 2",
+        image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
+      },
+    ],
+    features: [
+      {
+        title: "Partnerships for the goals",
+        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-16.svg",
+      },
+      {
+        title: "Climate action",
+        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-12.svg",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    title: "Books for School Project",
+    image: community2,
+    tags: ["Individual"],
+    createdBy: [
+      {
+        name: "User 3",
+        image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
+      },
+    ],
+    features: [
+      {
+        title: "Quality Education",
+        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-3.svg",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    title: "Books for School Project",
+    image: community3,
+    tags: ["Individual"],
+    createdBy: [
+      {
+        name: "User 3",
+        image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
+      },
+    ],
+    features: [
+      {
+        title: "Quality Education",
+        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-3.svg",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    title: "Books for School Project",
+    image: community4,
+    tags: ["Individual"],
+    createdBy: [
+      {
+        name: "User 3",
+        image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
+      },
+    ],
+    features: [
+      {
+        title: "Quality Education",
+        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-3.svg",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    title: "Books for School Project",
+    image: community5,
+    tags: ["Individual"],
+    createdBy: [
+      {
+        name: "User 3",
+        image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
+      },
+    ],
+    features: [
+      {
+        title: "Quality Education",
+        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-3.svg",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    title: "Books for School Project",
+    image: community6,
+    tags: ["Individual"],
+    createdBy: [
+      {
+        name: "User 3",
+        image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
+      },
+    ],
+    features: [
+      {
+        title: "Quality Education",
+        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-3.svg",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    title: "Books for School Project",
+    image: community7,
+    tags: ["Individual"],
+    createdBy: [
+      {
+        name: "User 3",
+        image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
+      },
+    ],
+    features: [
+      {
+        title: "Quality Education",
+        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-3.svg",
+      },
+    ],
+  },
+];
 
 const partners = [
   { id: 1, image: thanku1 },
@@ -393,34 +513,38 @@ const goalsData = [
 ];
 
 export default function HeroBannerSlider() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3.5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    centerMode: true,
-    centerPadding: "0",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2.5,
-          // centerPadding: "20px",
-        },
-      },
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1.5,
-          // centerPadding: "20px",
-        },
-      },
-    ],
-  };
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 3.5,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000,
+  //   centerMode: true,
+  //   centerPadding: "0",
+  //   // centerPadding: "3%",
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 2.5,
+  //         // centerPadding: "20px",
+  //       },
+  //     },
+
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         slidesToShow: 1.5,
+  //         // centerPadding: "20px",
+  //       },
+  //     },
+  //   ],
+  // };
 
   // useEffect(() => {
   //   const lenis = new Lenis();
@@ -677,9 +801,9 @@ export default function HeroBannerSlider() {
         </div>
       </section>
 
-      <section className="p-6 bg-gray-100 animate__animated animate__backInDown">
+      {/* Scholarships */}
+      {/* <section className="p-6 bg-gray-100 animate__animated animate__backInDown">
         <div className="container mx-auto">
-          {/* Header Section */}
           <div className="text-left mb-8 animate__animated animate__bounce">
             <div className="flex justify-between items-center mb-6">
               <div className="relative inline-block">
@@ -702,7 +826,6 @@ export default function HeroBannerSlider() {
             </div>
           </div>
 
-          {/* Slider Section */}
           <Slider {...settings} className="scholarship-slider">
             {scholarships.map((scholarship) => (
               <div key={scholarship.id} className="p-4">
@@ -742,6 +865,322 @@ export default function HeroBannerSlider() {
               </div>
             ))}
           </Slider>
+        </div>
+      </section> */}
+
+      <section className="p-6 bg-gray-100 animate__animated animate__backInDown">
+        <div className="container mx-auto">
+          <div className="text-left mb-8 animate__animated animate__bounce">
+            <div className="flex justify-between items-center mb-6">
+              <div className="relative inline-block">
+                <h1 className="text-3xl font-bold text-gray-800 relative">
+                  Scholarships
+                  <Image
+                    src={oppo}
+                    alt="Header Icon"
+                    className="absolute top-0 right-[-92px] w-10 h-10"
+                  />
+                </h1>
+              </div>
+              <Button
+                variant="contained"
+                color="primary"
+                className="rounded-md shadow-lg"
+              >
+                Explore More
+              </Button>
+            </div>
+          </div>
+
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={30}
+            slidesPerView={3.5}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ el: ".custom-pagination", clickable: true }}
+            navigation
+            loop
+            breakpoints={{
+              640: { slidesPerView: 1.5 },
+              768: { slidesPerView: 2.5 },
+              1024: { slidesPerView: 3.5 },
+            }}
+            className="relative"
+          >
+            <div className="custom-pagination mt-10 flex justify-center"></div>
+
+            {scholarships.map((scholarship) => (
+              <SwiperSlide key={scholarship.id}>
+                <div className="p-4">
+                  <div className="bg-white shadow-md rounded-lg overflow-hidden animate__animated animate__zoomIn">
+                    <a href={scholarship.link} className="block">
+                      <Image
+                        src={scholarship.image}
+                        alt={scholarship.title}
+                        className="w-full h-48 object-cover"
+                      />
+                    </a>
+                    <div className="p-4">
+                      <a
+                        href={scholarship.link}
+                        className="text-lg font-semibold text-gray-900 block mb-2"
+                      >
+                        {scholarship.title}
+                      </a>
+                      <span className="text-sm text-gray-600">
+                        {scholarship.points}
+                      </span>
+                      <p className="text-sm text-gray-700 mt-2">
+                        {scholarship.description}
+                      </p>
+                      <div className="flex gap-2 mt-3">
+                        {scholarship.features?.map((feature, index) => (
+                          <img
+                            key={index}
+                            src={feature.img}
+                            title={feature.title}
+                            className="w-6 h-6"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className="custom-pagination mt-6 flex justify-center"></div>
+        </div>
+      </section>
+
+      {/* <section className="p-6 bg-gray-100 animate__animated animate__backInDown">
+        <div className="container mx-auto">
+          <div className="text-left mb-8 animate__animated animate__bounce">
+            <div className="flex justify-between items-center mb-6">
+              <div className="relative inline-block">
+                <h1 className="text-3xl font-bold text-gray-800 relative">
+                  Scholarships
+                  <Image
+                    src={oppo}
+                    alt="Header Icon"
+                    className="absolute top-0 right-[-92px] w-10 h-10"
+                  />
+                </h1>
+              </div>
+              <Button
+                variant="contained"
+                color="primary"
+                className="rounded-md shadow-lg"
+              >
+                Explore More
+              </Button>
+            </div>
+          </div>
+
+          <div className="relative flex items-center justify-center">
+            <Swiper
+              modules={[Navigation, Autoplay, Pagination]}
+              spaceBetween={30}
+              slidesPerView={3.5}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              pagination={{ el: ".custom-pagination", clickable: true }}
+              navigation={{
+                nextEl: ".custom-next",
+                prevEl: ".custom-prev",
+              }}
+              loop
+              breakpoints={{
+                640: { slidesPerView: 1.5 },
+                768: { slidesPerView: 2.5 },
+                1024: { slidesPerView: 3.5 },
+              }}
+            >
+              {scholarships.map((scholarship) => (
+                <SwiperSlide key={scholarship.id}>
+                  <div className="p-4">
+                    <div className="bg-white shadow-md rounded-lg overflow-hidden animate__animated animate__zoomIn">
+                      <a href={scholarship.link} className="block">
+                        <Image
+                          src={scholarship.image}
+                          alt={scholarship.title}
+                          className="w-full h-48 object-cover"
+                        />
+                      </a>
+                      <div className="p-4">
+                        <a
+                          href={scholarship.link}
+                          className="text-lg font-semibold text-gray-900 block mb-2"
+                        >
+                          {scholarship.title}
+                        </a>
+                        <span className="text-sm text-gray-600">
+                          {scholarship.points}
+                        </span>
+                        <p className="text-sm text-gray-700 mt-2">
+                          {scholarship.description}
+                        </p>
+                        <div className="flex gap-2 mt-3">
+                          {scholarship.features?.map((feature, index) => (
+                            <img
+                              key={index}
+                              src={feature.img}
+                              title={feature.title}
+                              className="w-6 h-6"
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <button className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 text-black p-2 rounded-full shadow-md">
+              ❮
+            </button>
+            <div className="custom-line"></div>
+            <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md">
+              ❯
+            </button>
+          </div>
+
+          <div className="custom-pagination mt-6 flex justify-center"></div>
+        </div>
+      </section> */}
+
+      <section className="py-12 bg-gray-100 mx-auto px-4">
+        <hr />
+      </section>
+
+      {/* Community */}
+      <section className="py-12 bg-gray-100 animate__animated animate__fadeIn">
+        <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-left mb-8 animate__animated animate__bounce">
+            <div className="flex justify-between items-center mb-6">
+              <div className="relative inline-block">
+                <h1 className="text-3xl font-bold text-gray-800 relative ">
+                  Our Community Impact
+                  <Image
+                    src={oppo}
+                    alt="Header Icon"
+                    className="absolute top-0 right-[-92px] w-10 h-10"
+                  />
+                </h1>
+              </div>
+              <Button
+                variant="contained"
+                color="primary"
+                className="rounded-md shadow-lg"
+              >
+                Explore More
+              </Button>
+            </div>
+          </div>
+
+          {/* Slider Section */}
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={30}
+            slidesPerView={3.5}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            navigation
+            loop
+            breakpoints={{
+              640: {
+                slidesPerView: 1.5,
+              },
+              768: {
+                slidesPerView: 2.5,
+              },
+              1024: {
+                slidesPerView: 3.5,
+              },
+            }}
+            // className="relative pb-10"
+            className="relative"
+          >
+            <div className="custom-pagination mt-10 flex justify-center"></div>
+            {impactsData.map((impact) => (
+              <SwiperSlide key={impact.id}>
+                <div className="bg-white shadow-lg rounded-lg overflow-hidden animate__animated animate__zoomIn">
+                  <div className="relative h-48">
+                    <Image
+                      src={impact.image}
+                      alt={impact.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute top-2 left-2 flex gap-2">
+                      {impact.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="bg-blue-500 text-white text-xs px-2 py-1 rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold mb-2">
+                      {impact.title}
+                    </h3>
+                    <div className="flex items-center space-x-2 mb-4">
+                      <span className="text-sm text-gray-600">
+                        Impact Created by:
+                      </span>
+                      <div className="flex -space-x-2">
+                        {impact.createdBy.map((user, index) => (
+                          <div
+                            key={index}
+                            className="relative w-8 h-8 rounded-full overflow-hidden"
+                          >
+                            <Image
+                              src={user.image}
+                              alt={user.name}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {impact.features.map((feature, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center bg-gray-200 p-2 rounded"
+                        >
+                          <Image
+                            src={feature.icon}
+                            alt={feature.title}
+                            width={20}
+                            height={20}
+                            className="w-5 h-5"
+                          />
+                          <span className="ml-2 text-sm">{feature.title}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Explore More Button */}
+          <div className="text-center mt-8 animate__animated animate__fadeInUp">
+            <a
+              href=""
+              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+            >
+              Explore More
+            </a>
+          </div>
         </div>
       </section>
 
@@ -808,18 +1247,17 @@ export default function HeroBannerSlider() {
       >
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <h1 className="text-2xl md:text-3xl font-semibold text-white text-center md:text-left">
+            <h1 className="text-lg sm:text-xl md:text-3xl font-semibold text-white text-left">
               Stay Connected! Subscribe to our newsletter
             </h1>
-
-            <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden w-full md:max-w-md">
+            <div className="flex flex-col sm:flex-row items-center w-full md:max-w-md sm:gap-0 gap-2">
               <input
                 type="email"
                 placeholder="Email address"
                 aria-label="Email address"
-                className="flex-1 px-4 py-2 outline-none text-gray-700"
+                className="flex-1 px-4 py-2 outline-none text-gray-700 w-full sm:w-auto text-sm sm:text-base border border-gray-300 sm:rounded-l-lg"
               />
-              <button className="bg-white text-[#ffaf00] px-4 py-2 font-semibold">
+              <button className="bg-white text-[#ffaf00] px-4 py-2 font-semibold w-full sm:w-auto text-sm sm:text-base border border-gray-300 sm:border-l-0 sm:rounded-r-lg">
                 Subscribe
               </button>
             </div>
@@ -839,7 +1277,7 @@ export default function HeroBannerSlider() {
         }}
       >
         <div className="container mx-auto px-4 pb-4 pt-24">
-          <div className="text-center mb-8 flex justify-between items-center">
+          <div className="mb-8 flex justify-between items-center">
             <h1 className="text-3xl font-light mb-4 text-white animate__animated animate__backInLeft">
               Sustainable Development Goals
             </h1>

@@ -33,6 +33,7 @@ export default function Header() {
   // }, []);
 
   return (
+    // <header className="fixed top-0 left-0 w-full bg-white shadow-md animate__animated animate__fadeInDown z-50">
     <header className=" bg-white shadow-md animate__animated animate__fadeInDown">
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link
@@ -103,6 +104,7 @@ export default function Header() {
 
       {isOpen && (
         <nav className="md:hidden bg-black shadow-sm animate__animated animate__fadeIn">
+          {/* <nav className="absolute top-full left-0 w-full bg-black shadow-sm animate__animated animate__fadeIn z-40"> */}
           <ul className="flex flex-col py-4 gap-4 text-white">
             {["About", "Donate", "Contact", "News"].map((item, index) => (
               <li

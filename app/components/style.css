@@ -1,0 +1,44 @@
+/* .custom-prev,
+.custom-next {
+  position: absolute;
+  top: 110%;
+  transform: translateY(-50%);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+} */
+
+.custom-prev::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 100px;
+  /* Line ki width */
+  height: 2px;
+  /* Line ki thickness */
+  background-color: black;
+  /* Line ka color */
+  transform: translateY(-50%);
+}
+
+
+.custom-prev {
+  left: 10px;
+  left: 45%;
+  /*  */
+}
+
+.custom-next {
+  right: 10px;
+  right: 45%;
+}
+
+.custom-line {
+  width: 100px;
+  /* Line width */
+  height: 2px;
+  /* Line thickness */
+  background-color: black;
+  /* Line color */
+}
