@@ -867,77 +867,78 @@ export default function HeroBannerSlider() {
       </section> */}
 
       <section className="p-6 bg-gray-100 animate__animated animate__backInDown">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
+          {/* Header Section */}
           <div className="text-left mb-8 animate__animated animate__bounce">
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex flex-wrap justify-between items-center mb-6">
               <div className="relative inline-block">
-                <h1 className="text-3xl font-bold text-gray-800 relative">
+                <h1 className="text-xl md:text-2xl font-bold text-gray-800 relative">
                   Scholarships
                   <Image
                     src={oppo}
                     alt="Header Icon"
-                    className="absolute top-0 right-[-92px] w-10 h-10"
+                    className="absolute top-0 right-[-50px] md:right-[-92px] w-7 md:w-9 h-7 md:h-9"
                   />
                 </h1>
               </div>
               <Button
                 variant="contained"
                 color="primary"
-                className="rounded-md shadow-lg"
+                className="rounded-md shadow-lg text-xs md:text-sm px-4 py-2"
               >
                 Explore More
               </Button>
             </div>
           </div>
 
+          {/* Swiper Component */}
           <Swiper
             modules={[Autoplay, Pagination]}
-            spaceBetween={30}
-            slidesPerView={3.5}
+            spaceBetween={20}
+            slidesPerView={1.2}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             pagination={{ el: ".custom-pagination", clickable: true }}
             navigation
             loop
             breakpoints={{
-              640: { slidesPerView: 1.5 },
+              480: { slidesPerView: 1.5 },
+              640: { slidesPerView: 2 },
               768: { slidesPerView: 2.5 },
               1024: { slidesPerView: 3.5 },
             }}
             className="relative"
           >
-            <div className="custom-pagination mt-10 flex justify-center"></div>
-
             {scholarships.map((scholarship) => (
               <SwiperSlide key={scholarship.id}>
-                <div className="p-4">
+                <div className="p-2 md:p-3">
                   <div className="bg-white shadow-md rounded-lg overflow-hidden animate__animated animate__zoomIn">
                     <a href={scholarship.link} className="block">
                       <Image
                         src={scholarship.image}
                         alt={scholarship.title}
-                        className="w-full h-48 object-cover"
+                        className="w-full h-36 md:h-44 object-cover"
                       />
                     </a>
-                    <div className="p-4">
+                    <div className="p-3 md:p-3.5">
                       <a
                         href={scholarship.link}
-                        className="text-lg font-semibold text-gray-900 block mb-2"
+                        className="text-sm md:text-base font-semibold text-gray-900 block mb-1 md:mb-1.5"
                       >
                         {scholarship.title}
                       </a>
-                      <span className="text-sm text-gray-600">
+                      <span className="text-xs text-gray-600">
                         {scholarship.points}
                       </span>
-                      <p className="text-sm text-gray-700 mt-2">
+                      <p className="text-xs text-gray-700 mt-1">
                         {scholarship.description}
                       </p>
-                      <div className="flex gap-2 mt-3">
+                      <div className="flex gap-2 mt-2">
                         {scholarship.features?.map((feature, index) => (
                           <img
                             key={index}
                             src={feature.img}
                             title={feature.title}
-                            className="w-6 h-6"
+                            className="w-4 h-4 md:w-5 md:h-5"
                           />
                         ))}
                       </div>
@@ -948,7 +949,8 @@ export default function HeroBannerSlider() {
             ))}
           </Swiper>
 
-          <div className="custom-pagination mt-6 flex justify-center"></div>
+          {/* Custom Pagination */}
+          <div className="custom-pagination mt-4 flex justify-center"></div>
         </div>
       </section>
 
@@ -1053,89 +1055,77 @@ export default function HeroBannerSlider() {
       </section>
 
       {/* Community */}
-      <section className="py-12 bg-gray-100 animate__animated animate__fadeIn">
-        <div className="container mx-auto px-4">
-          {/* Section Header */}
-          <div className="text-left mb-8 animate__animated animate__bounce">
-            <div className="flex justify-between items-center mb-6">
+      <section className="py-6 sm:py-10 bg-gray-100 animate__animated animate__fadeIn">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="text-left mb-4 sm:mb-6 animate__animated animate__bounce">
+            <div className="flex flex-col sm:flex-row justify-between items-center mb-3 sm:mb-5">
               <div className="relative inline-block">
-                <h1 className="text-3xl font-bold text-gray-800 relative ">
+                <h1 className="text-lg sm:text-2xl font-semibold text-gray-800 relative">
                   Our Community Impact
                   <Image
                     src={oppo}
                     alt="Header Icon"
-                    className="absolute top-0 right-[-92px] w-10 h-10"
+                    className="absolute top-0 right-[-50px] sm:right-[-72px] w-6 sm:w-8 h-6 sm:h-8"
                   />
                 </h1>
               </div>
               <Button
                 variant="contained"
                 color="primary"
-                className="rounded-md shadow-lg"
+                className="rounded-md shadow-md text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
               >
                 Explore More
               </Button>
             </div>
           </div>
 
-          {/* Slider Section */}
           <Swiper
             modules={[Autoplay, Pagination]}
-            spaceBetween={30}
-            slidesPerView={3.5}
+            spaceBetween={15}
+            slidesPerView={1.5}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             pagination={{ clickable: true }}
-            navigation
             loop
             breakpoints={{
-              640: {
-                slidesPerView: 1.5,
-              },
-              768: {
-                slidesPerView: 2.5,
-              },
-              1024: {
-                slidesPerView: 3.5,
-              },
+              768: { slidesPerView: 2.5 },
+              1024: { slidesPerView: 3.5 },
             }}
-            // className="relative pb-10"
             className="relative"
           >
-            <div className="custom-pagination mt-10 flex justify-center"></div>
             {impactsData.map((impact) => (
               <SwiperSlide key={impact.id}>
-                <div className="bg-white shadow-lg rounded-lg overflow-hidden animate__animated animate__zoomIn">
-                  <div className="relative h-48">
+                <div className="bg-white shadow-md rounded-lg overflow-hidden animate__animated animate__zoomIn">
+                  <div className="relative h-28 sm:h-40">
                     <Image
                       src={impact.image}
                       alt={impact.title}
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute top-2 left-2 flex gap-2">
+                    <div className="absolute top-1.5 left-1.5 flex gap-1">
                       {impact.tags.map((tag, index) => (
                         <span
                           key={index}
-                          className="bg-blue-500 text-white text-xs px-2 py-1 rounded"
+                          className="bg-blue-500 text-white text-[9px] sm:text-xs px-1 sm:px-2 py-0.5 rounded"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-xl font-semibold mb-2">
+                  <div className="p-2 sm:p-3">
+                    <h3 className="text-sm sm:text-base font-medium mb-1">
                       {impact.title}
                     </h3>
-                    <div className="flex items-center space-x-2 mb-4">
-                      <span className="text-sm text-gray-600">
+                    <div className="flex items-center space-x-1 mb-2">
+                      <span className="text-[10px] sm:text-xs text-gray-600">
                         Impact Created by:
                       </span>
-                      <div className="flex -space-x-2">
+                      <div className="flex -space-x-1">
                         {impact.createdBy.map((user, index) => (
                           <div
                             key={index}
-                            className="relative w-8 h-8 rounded-full overflow-hidden"
+                            className="relative w-5 sm:w-6 h-5 sm:h-6 rounded-full overflow-hidden"
                           >
                             <Image
                               src={user.image}
@@ -1147,20 +1137,22 @@ export default function HeroBannerSlider() {
                         ))}
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1">
                       {impact.features.map((feature, index) => (
                         <div
                           key={index}
-                          className="flex items-center bg-gray-200 p-2 rounded"
+                          className="flex items-center bg-gray-200 p-1 rounded"
                         >
                           <Image
                             src={feature.icon}
                             alt={feature.title}
-                            width={20}
-                            height={20}
-                            className="w-5 h-5"
+                            width={14}
+                            height={14}
+                            className="w-3 sm:w-4 h-3 sm:h-4"
                           />
-                          <span className="ml-2 text-sm">{feature.title}</span>
+                          <span className="ml-1 text-[9px] sm:text-xs">
+                            {feature.title}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -1170,11 +1162,10 @@ export default function HeroBannerSlider() {
             ))}
           </Swiper>
 
-          {/* Explore More Button */}
-          <div className="text-center mt-8 animate__animated animate__fadeInUp">
+          <div className="text-center mt-5 sm:mt-7 animate__animated animate__fadeInUp">
             <a
               href=""
-              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+              className="inline-block bg-blue-600 text-white text-xs sm:text-sm px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg hover:bg-blue-700 transition"
             >
               Explore More
             </a>
