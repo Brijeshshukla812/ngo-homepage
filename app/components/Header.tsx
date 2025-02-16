@@ -10,7 +10,7 @@ import "animate.css"; // Import Animate.css
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState<number | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const logo = document.getElementById("logo");
@@ -33,7 +33,7 @@ export default function Header() {
   // }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-md animate__animated animate__fadeInDown">
+    <header className=" bg-white shadow-md animate__animated animate__fadeInDown">
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link
           id="logo"

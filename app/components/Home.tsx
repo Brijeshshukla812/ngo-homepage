@@ -26,7 +26,7 @@ import thanku6 from "../../assets/thankU/company6.png";
 import thanku7 from "../../assets/thankU/company7.png";
 import "animate.css"; // Import Animate.css
 
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 import Lenis from "@studio-freight/lenis";
 import { useGSAP } from "@gsap/react";
 
@@ -241,41 +241,41 @@ const scholarships = [
   },
 ];
 
-const impactsData = [
-  {
-    id: 1,
-    title: "Tree Planting with ARCOS",
-    image: "https://via.placeholder.com/400x280",
-    tags: ["Council", "Featured"],
-    createdBy: [
-      { name: "User 1", image: "https://via.placeholder.com/28x28" },
-      { name: "User 2", image: "https://via.placeholder.com/28x28" },
-    ],
-    features: [
-      {
-        title: "Partnerships for the goals",
-        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-16.svg",
-      },
-      {
-        title: "Climate action",
-        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-12.svg",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Books for School Project",
-    image: "https://via.placeholder.com/400x280",
-    tags: ["Individual"],
-    createdBy: [{ name: "User 3", image: "https://via.placeholder.com/28x28" }],
-    features: [
-      {
-        title: "Quality Education",
-        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-3.svg",
-      },
-    ],
-  },
-];
+// const impactsData = [
+//   {
+//     id: 1,
+//     title: "Tree Planting with ARCOS",
+//     image: "https://via.placeholder.com/400x280",
+//     tags: ["Council", "Featured"],
+//     createdBy: [
+//       { name: "User 1", image: "https://via.placeholder.com/28x28" },
+//       { name: "User 2", image: "https://via.placeholder.com/28x28" },
+//     ],
+//     features: [
+//       {
+//         title: "Partnerships for the goals",
+//         icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-16.svg",
+//       },
+//       {
+//         title: "Climate action",
+//         icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-12.svg",
+//       },
+//     ],
+//   },
+//   {
+//     id: 2,
+//     title: "Books for School Project",
+//     image: "https://via.placeholder.com/400x280",
+//     tags: ["Individual"],
+//     createdBy: [{ name: "User 3", image: "https://via.placeholder.com/28x28" }],
+//     features: [
+//       {
+//         title: "Quality Education",
+//         icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-3.svg",
+//       },
+//     ],
+//   },
+// ];
 
 const partners = [
   { id: 1, image: thanku1 },
@@ -460,7 +460,7 @@ export default function HeroBannerSlider() {
 
   useGSAP(() => {});
 
-  const [animate, setAnimate] = useState(false);
+  const [, setAnimate] = useState(false);
   useEffect(() => {
     setAnimate(true);
     setTimeout(() => setAnimate(false), 1000);
