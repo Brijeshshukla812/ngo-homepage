@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "@mui/material";
 import "swiper/css";
 import "./style.css";
-
 import "swiper/css/pagination";
 import Image from "next/image";
 import img1 from "../../assets/scrollImages/images1.jpg";
@@ -28,16 +27,15 @@ import thanku6 from "../../assets/thankU/company6.png";
 import thanku7 from "../../assets/thankU/company7.png";
 import "animate.css"; // Import Animate.css
 // import { Style } from "/Home.css";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-
+// import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 // import { gsap } from "gsap";
 import Lenis from "@studio-freight/lenis";
 import { useGSAP } from "@gsap/react";
 
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -513,8 +511,8 @@ const goalsData = [
 ];
 
 export default function HeroBannerSlider() {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  // const prevRef = useRef(null);
+  // const nextRef = useRef(null);
 
   // const settings = {
   //   dots: true,
