@@ -591,7 +591,7 @@ export default function HeroBannerSlider() {
   return (
     <>
       {/*banner section */}
-      <section className="container mx-auto">
+      <section className=" mx-auto">
         <style>
           {`
           :root {
@@ -652,9 +652,9 @@ export default function HeroBannerSlider() {
       </section>
       {/* What we do at QS ImpACT ---section */}
       <section className="p-6 animate__animated animate__backInDown">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <div className="text-left mb-8">
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex justify-between items-center mb-6 gap-4">
               <div className="flex flex-col lg:w-[55%] md:w-[60%] sm:w-[70%] w-full animate__animated animate__rubberBand">
                 <h1 className="lg:text-[32px] md:text-[28px] sm:text-[22px] text-[20px] font-semibold text-[#191717]">
                   What we do at QS ImpACT
@@ -669,15 +669,15 @@ export default function HeroBannerSlider() {
                 <Image
                   src={svg}
                   alt="Header Icon"
-                  className="lg:w-24 lg:h-24 md:w-20 md:h-20 sm:w-16 sm:h-16 w-14 h-14"
+                  className="lg:w-24 lg:h-24 md:w-20 md:h-20 sm:w-22 sm:h-22 w-25 h-25"
                 />
               </div>
             </div>
           </div>
 
-          <div className="hidden md:flex justify-between gap-4 items-center py-6 px-4 sm:px-2">
-            <div className="w-1/2 bg-[#ffaf00] text-white p-8 sm:p-4 rounded-lg shadow-lg">
-              <span className="text-2xl md:text-xl sm:text-lg font-semibold mb-4 block">
+          <div className="hidden md:flex justify-between gap-4 py-6 px-4 sm:px-2">
+            <div className="w-1/2 bg-[#ffaf00] text-white p-8 sm:p-4 rounded-lg shadow-lg flex flex-col justify-between">
+              <span className="text-2xl md:text-xl sm:text-lg font-semibold mb-2 block">
                 Knowing & caring about issues in your community is the first
                 step.
               </span>
@@ -707,12 +707,14 @@ export default function HeroBannerSlider() {
                   </div>
                 ))}
               </div>
-              <button className="hidden lg:block border border-white text-white px-4 sm:px-3 py-2 sm:py-1 text-lg sm:text-sm hover:bg-white hover:text-black transition">
-                CREATE AN IMPACT
-              </button>
+              <div>
+                <button className="hidden lg:block border border-white text-white px-4 sm:px-3 py-2 sm:py-1 text-lg sm:text-sm hover:bg-white hover:text-black transition">
+                  CREATE AN IMPACT
+                </button>
+              </div>
             </div>
 
-            <div className="w-1/2 bg-[hsla(0,4%,9%,0.2)] p-8 sm:p-4 rounded-lg shadow-lg">
+            <div className="w-1/2 bg-[hsla(0,4%,9%,0.2)] p-8 sm:p-4 rounded-lg shadow-lg flex flex-col justify-between">
               <span className="text-2xl md:text-xl sm:text-lg font-semibold mb-4 block">
                 Share your impact with us and gain access to life-changing
                 opportunities
@@ -734,7 +736,7 @@ export default function HeroBannerSlider() {
                       <Image
                         src={item.img}
                         alt="Header Icon"
-                        className="w-7 h-7 sm:w-6 sm:h-6"
+                        className="w-6 h-6 sm:w-5 sm:h-5"
                       />
                     </div>
                     <span className="text-base sm:text-sm text-center">
@@ -743,9 +745,11 @@ export default function HeroBannerSlider() {
                   </div>
                 ))}
               </div>
-              <button className="hidden lg:block border border-white text-white px-4 sm:px-3 py-2 sm:py-1 text-lg sm:text-sm hover:bg-white hover:text-black transition">
-                BE RECOGNIZED
-              </button>
+              <div>
+                <button className="hidden lg:block border border-white text-white px-4 sm:px-3 py-2 sm:py-1 text-lg sm:text-sm hover:bg-white hover:text-black transition">
+                  BE RECOGNIZED
+                </button>
+              </div>
             </div>
           </div>
 
@@ -760,7 +764,7 @@ export default function HeroBannerSlider() {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-y-8 sm:gap-y-6 items-center px-4 sm:px-2">
+            <div className="grid grid-cols-3 gap-y-8 sm:gap-y-6  px-2 sm:px-1">
               {[
                 { img: svg1, text: "1. Be Inspired" },
                 { img: svg2, text: "2. Choose a cause" },
@@ -773,14 +777,14 @@ export default function HeroBannerSlider() {
                 },
               ].map((item, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  <div className="w-14 h-14 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white p-3 sm:p-2">
+                  <div className="w-14 h-14 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white p-2 sm:p-1">
                     <Image
                       src={item.img}
                       alt={item.text}
-                      className="w-7 h-7 sm:w-6 sm:h-6"
+                      className="w-5 h-5 sm:w-6 sm:h-6"
                     />
                   </div>
-                  <span className="mt-3 text-base sm:text-sm text-center">
+                  <span className="mt-3 text-xs sm:text-sm text-center">
                     {item.text}
                   </span>
                 </div>
@@ -800,75 +804,8 @@ export default function HeroBannerSlider() {
       </section>
 
       {/* Scholarships */}
-      {/* <section className="p-6 bg-gray-100 animate__animated animate__backInDown">
-        <div className="container mx-auto">
-          <div className="text-left mb-8 animate__animated animate__bounce">
-            <div className="flex justify-between items-center mb-6">
-              <div className="relative inline-block">
-                <h1 className="text-3xl font-bold text-gray-800 relative ">
-                  Scholarships
-                  <Image
-                    src={oppo}
-                    alt="Header Icon"
-                    className="absolute top-0 right-[-92px] w-10 h-10"
-                  />
-                </h1>
-              </div>
-              <Button
-                variant="contained"
-                color="primary"
-                className="rounded-md shadow-lg"
-              >
-                Explore More
-              </Button>
-            </div>
-          </div>
-
-          <Slider {...settings} className="scholarship-slider">
-            {scholarships.map((scholarship) => (
-              <div key={scholarship.id} className="p-4">
-                <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                  <a href={scholarship.link} className="block">
-                    <Image
-                      src={scholarship.image}
-                      alt={scholarship.title}
-                      className="w-full h-48 object-cover"
-                    />
-                  </a>
-                  <div className="p-4">
-                    <a
-                      href={scholarship.link}
-                      className="text-lg font-semibold text-gray-900 block mb-2"
-                    >
-                      {scholarship.title}
-                    </a>
-                    <span className="text-sm text-gray-600">
-                      {scholarship.points}
-                    </span>
-                    <p className="text-sm text-gray-700 mt-2">
-                      {scholarship.description}
-                    </p>
-                    <div className="flex gap-2 mt-3">
-                      {scholarship.features?.map((feature, index) => (
-                        <img
-                          key={index}
-                          src={feature.img}
-                          title={feature.title}
-                          className="w-6 h-6"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </section> */}
-
       <section className="p-6 bg-gray-100 animate__animated animate__backInDown">
         <div className="container mx-auto px-4">
-          {/* Header Section */}
           <div className="text-left mb-8 animate__animated animate__bounce">
             <div className="flex flex-wrap justify-between items-center mb-6">
               <div className="relative inline-block">
@@ -881,21 +818,23 @@ export default function HeroBannerSlider() {
                   />
                 </h1>
               </div>
-              <Button
-                variant="contained"
-                color="primary"
-                className="rounded-md shadow-lg text-xs md:text-sm px-4 py-2"
-              >
-                Explore More
-              </Button>
+              <div className="hidden md:block">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className="rounded-md shadow-lg text-xs md:text-sm px-4 py-2"
+                >
+                  Explore More
+                </Button>
+              </div>
             </div>
           </div>
 
           {/* Swiper Component */}
           <Swiper
             modules={[Autoplay, Pagination]}
-            spaceBetween={20}
-            slidesPerView={1.2}
+            spaceBetween={15}
+            slidesPerView={1.5}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             pagination={{ el: ".custom-pagination", clickable: true }}
             navigation
@@ -910,7 +849,8 @@ export default function HeroBannerSlider() {
           >
             {scholarships.map((scholarship) => (
               <SwiperSlide key={scholarship.id}>
-                <div className="p-2 md:p-3">
+                <div className="p-1">
+                  {/* <div className=""> */}
                   <div className="bg-white shadow-md rounded-lg overflow-hidden animate__animated animate__zoomIn">
                     <a href={scholarship.link} className="block">
                       <Image
@@ -949,114 +889,33 @@ export default function HeroBannerSlider() {
             ))}
           </Swiper>
 
-          {/* Custom Pagination */}
           <div className="custom-pagination mt-4 flex justify-center"></div>
+
+          <div className="mt-5 sm:mt-7 animate__animated animate__fadeInUp block md:hidden">
+            {/* <a
+              href=""
+              className="inline-block bg-blue-600 text-white text-xs sm:text-sm px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg hover:bg-blue-700 transition"
+            >
+              Explore More
+            </a> */}
+            <Button
+              variant="contained"
+              color="primary"
+              className="inline-block rounded-md shadow-md text-xs sm:text-sm px-3 sm:px-6 py-1.5 sm:py-2"
+            >
+              Explore More
+            </Button>
+          </div>
         </div>
       </section>
-
-      {/* <section className="p-6 bg-gray-100 animate__animated animate__backInDown">
-        <div className="container mx-auto">
-          <div className="text-left mb-8 animate__animated animate__bounce">
-            <div className="flex justify-between items-center mb-6">
-              <div className="relative inline-block">
-                <h1 className="text-3xl font-bold text-gray-800 relative">
-                  Scholarships
-                  <Image
-                    src={oppo}
-                    alt="Header Icon"
-                    className="absolute top-0 right-[-92px] w-10 h-10"
-                  />
-                </h1>
-              </div>
-              <Button
-                variant="contained"
-                color="primary"
-                className="rounded-md shadow-lg"
-              >
-                Explore More
-              </Button>
-            </div>
-          </div>
-
-          <div className="relative flex items-center justify-center">
-            <Swiper
-              modules={[Navigation, Autoplay, Pagination]}
-              spaceBetween={30}
-              slidesPerView={3.5}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
-              pagination={{ el: ".custom-pagination", clickable: true }}
-              navigation={{
-                nextEl: ".custom-next",
-                prevEl: ".custom-prev",
-              }}
-              loop
-              breakpoints={{
-                640: { slidesPerView: 1.5 },
-                768: { slidesPerView: 2.5 },
-                1024: { slidesPerView: 3.5 },
-              }}
-            >
-              {scholarships.map((scholarship) => (
-                <SwiperSlide key={scholarship.id}>
-                  <div className="p-4">
-                    <div className="bg-white shadow-md rounded-lg overflow-hidden animate__animated animate__zoomIn">
-                      <a href={scholarship.link} className="block">
-                        <Image
-                          src={scholarship.image}
-                          alt={scholarship.title}
-                          className="w-full h-48 object-cover"
-                        />
-                      </a>
-                      <div className="p-4">
-                        <a
-                          href={scholarship.link}
-                          className="text-lg font-semibold text-gray-900 block mb-2"
-                        >
-                          {scholarship.title}
-                        </a>
-                        <span className="text-sm text-gray-600">
-                          {scholarship.points}
-                        </span>
-                        <p className="text-sm text-gray-700 mt-2">
-                          {scholarship.description}
-                        </p>
-                        <div className="flex gap-2 mt-3">
-                          {scholarship.features?.map((feature, index) => (
-                            <img
-                              key={index}
-                              src={feature.img}
-                              title={feature.title}
-                              className="w-6 h-6"
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            <button className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 text-black p-2 rounded-full shadow-md">
-              ❮
-            </button>
-            <div className="custom-line"></div>
-            <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md">
-              ❯
-            </button>
-          </div>
-
-          <div className="custom-pagination mt-6 flex justify-center"></div>
-        </div>
-      </section> */}
 
       <section className="py-12 bg-gray-100 mx-auto px-4">
         <hr />
       </section>
 
       {/* Community */}
-      <section className="py-6 sm:py-10 bg-gray-100 animate__animated animate__fadeIn">
-        <div className="container mx-auto px-3 sm:px-4">
+      <section className="p-6 sm:py-10 bg-gray-100 animate__animated animate__fadeIn">
+        <div className="container mx-auto px-4 sm:px-4">
           <div className="text-left mb-4 sm:mb-6 animate__animated animate__bounce">
             <div className="flex flex-col sm:flex-row justify-between items-center mb-3 sm:mb-5">
               <div className="relative inline-block">
@@ -1069,13 +928,15 @@ export default function HeroBannerSlider() {
                   />
                 </h1>
               </div>
-              <Button
-                variant="contained"
-                color="primary"
-                className="rounded-md shadow-md text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
-              >
-                Explore More
-              </Button>
+              <div className="hidden md:block">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  className="rounded-md shadow-md text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
+                >
+                  Explore More
+                </Button>
+              </div>
             </div>
           </div>
 
@@ -1087,6 +948,8 @@ export default function HeroBannerSlider() {
             pagination={{ clickable: true }}
             loop
             breakpoints={{
+              480: { slidesPerView: 1.5 },
+              640: { slidesPerView: 2 },
               768: { slidesPerView: 2.5 },
               1024: { slidesPerView: 3.5 },
             }}
@@ -1162,13 +1025,20 @@ export default function HeroBannerSlider() {
             ))}
           </Swiper>
 
-          <div className="text-center mt-5 sm:mt-7 animate__animated animate__fadeInUp">
-            <a
+          <div className="mt-5 sm:mt-7 animate__animated animate__fadeInUp block md:hidden">
+            {/* <a
               href=""
               className="inline-block bg-blue-600 text-white text-xs sm:text-sm px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg hover:bg-blue-700 transition"
             >
               Explore More
-            </a>
+            </a> */}
+            <Button
+              variant="contained"
+              color="primary"
+              className="inline-block rounded-md shadow-md text-xs sm:text-sm px-3 sm:px-6 py-1.5 sm:py-2"
+            >
+              Explore More
+            </Button>
           </div>
         </div>
       </section>
@@ -1225,7 +1095,7 @@ export default function HeroBannerSlider() {
 
       {/* Stay Connected! Subscribe to our newsletter */}
       <section
-        className="w-full py-8 bg-cover bg-center"
+        className="w-full p-6 bg-cover bg-center"
         style={{
           backgroundImage: `url(${bg1.src})`,
           backgroundSize: "cover",
@@ -1234,7 +1104,7 @@ export default function HeroBannerSlider() {
           marginTop: "3rem",
         }}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <h1 className="text-lg sm:text-xl md:text-3xl font-semibold text-white text-left">
               Stay Connected! Subscribe to our newsletter
@@ -1256,7 +1126,7 @@ export default function HeroBannerSlider() {
 
       {/* Goals */}
       <section
-        className="py-12 bg-cover bg-center"
+        className="py-12 px-6 bg-cover bg-center"
         style={{
           backgroundImage: `url(${bg.src})`,
           backgroundSize: "cover",
@@ -1265,7 +1135,7 @@ export default function HeroBannerSlider() {
           marginTop: "3rem",
         }}
       >
-        <div className="container mx-auto px-4 pb-4 pt-24">
+        <div className="container mx-auto px-10 pb-4 pt-24">
           <div className="mb-8 flex justify-between items-center">
             <h1 className="text-3xl font-light mb-4 text-white animate__animated animate__backInLeft">
               Sustainable Development Goals
