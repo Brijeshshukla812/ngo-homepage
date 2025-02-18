@@ -31,7 +31,7 @@ import "animate.css"; // Import Animate.css
 // import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 // import { gsap } from "gsap";
 import Lenis from "@studio-freight/lenis";
-import { useGSAP } from "@gsap/react";
+// import { useGSAP } from "@gsap/react";
 
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
@@ -77,7 +77,7 @@ import {
   MdGavel,
   MdHandshake,
 } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const slides = [
   {
@@ -528,7 +528,7 @@ export default function HeroBannerSlider() {
     requestAnimationFrame(raf);
 
     // Scroll event par log add karein
-    lenis.on("scroll", (e: any) => {
+    lenis.on("scroll", (e: Event) => {
       console.debug("Scroll event:", e);
     });
 
@@ -549,11 +549,10 @@ export default function HeroBannerSlider() {
     };
   }, []);
 
-
   // for gsap library
   // useEffect(() => {
   //   gsap.registerPlugin(ScrollTrigger);
-  
+
   //   // Example animation for the banner section
   //   gsap.from(".banner-section", {
   //     opacity: 0,
@@ -561,7 +560,7 @@ export default function HeroBannerSlider() {
   //     duration: 1,
   //     ease: "power2.out",
   //   });
-  
+
   //   // Example animation for the "What we do at QS ImpACT" section
   //   gsap.from(".what-we-do-section", {
   //     opacity: 0,
@@ -572,7 +571,7 @@ export default function HeroBannerSlider() {
   //       start: "top 80%",
   //     },
   //   });
-  
+
   //   // Example animation for the scholarships section
   //   gsap.from(".scholarships-section", {
   //     opacity: 0,
@@ -583,7 +582,7 @@ export default function HeroBannerSlider() {
   //       start: "top 80%",
   //     },
   //   });
-  
+
   //   // Example animation for the community section
   //   gsap.from(".community-section", {
   //     opacity: 0,
@@ -594,7 +593,7 @@ export default function HeroBannerSlider() {
   //       start: "top 80%",
   //     },
   //   });
-  
+
   //   // Example animation for the thank you section
   //   gsap.from(".thank-you-section", {
   //     opacity: 0,
@@ -605,7 +604,7 @@ export default function HeroBannerSlider() {
   //       start: "top 80%",
   //     },
   //   });
-  
+
   //   // Example animation for the subscribe section
   //   gsap.from(".subscribe-section", {
   //     opacity: 0,
@@ -616,7 +615,7 @@ export default function HeroBannerSlider() {
   //       start: "top 80%",
   //     },
   //   });
-  
+
   //   // Example animation for the goals section
   //   gsap.from(".goals-section", {
   //     opacity: 0,
