@@ -1,5 +1,5 @@
 "use client";
-// import { useRef } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "@mui/material";
 import "swiper/css";
@@ -511,39 +511,6 @@ const goalsData = [
 ];
 
 export default function HeroBannerSlider() {
-  // const prevRef = useRef(null);
-  // const nextRef = useRef(null);
-
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 3.5,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   autoplaySpeed: 3000,
-  //   centerMode: true,
-  //   centerPadding: "0",
-  //   // centerPadding: "3%",
-  //   responsive: [
-  //     {
-  //       breakpoint: 1024,
-  //       settings: {
-  //         slidesToShow: 2.5,
-  //         // centerPadding: "20px",
-  //       },
-  //     },
-
-  //     {
-  //       breakpoint: 768,
-  //       settings: {
-  //         slidesToShow: 1.5,
-  //         // centerPadding: "20px",
-  //       },
-  //     },
-  //   ],
-  // };
-
   // useEffect(() => {
   //   const lenis = new Lenis();
   //   function raf(time: number) {
@@ -556,36 +523,168 @@ export default function HeroBannerSlider() {
   //   requestAnimationFrame(raf);
   // });
 
+  // useEffect(() => {
+  //   const lenis = new Lenis();
+  //   function raf(time: number) {
+  //     console.log("RequestAnimationFrame running at time:", time);
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+  //   requestAnimationFrame(raf);
+
+  //   // GSAP Animations
+  //   // gsap.from(".swiper-slide", {
+  //   //   opacity: 0,
+  //   //   y: 50,
+  //   //   duration: 1.2,
+  //   //   stagger: 0.3,
+  //   //   ease: "power3.out",
+  //   // });
+
+  //   // return () => {
+  //   //   console.log("lenis", lenis.destroy());
+  //   //   lenis.destroy();
+  //   // };
+  // }, []);
+
+  // useGSAP(() => {});
+
+  // const [, setAnimate] = useState(false);
+  // useEffect(() => {
+  //   setAnimate(true);
+  //   setTimeout(() => setAnimate(false), 1000);
+  // }, []);
+
+  // const lenisRef = useRef<Lenis | null>(null);
+
+  // useEffect(() => {
+  //   const lenis = new Lenis();
+
+  //   function raf(time: number) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+
+  //   requestAnimationFrame(raf);
+
+  //   return () => {
+  //     lenis.destroy();
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   // Lenis ko initialize karein aur options customize karein
+  //   const lenis = new Lenis({
+  //     duration: 7.5, // Scroll animation duration
+  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+  //     smooth: true, // Smooth scrolling enable karein
+  //     direction: "vertical", // Scroll direction (vertical ya horizontal)
+  //   });
+
+  //   // Request Animation Frame (RAF) setup karein
+  //   function raf(time: number) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+
+  //   requestAnimationFrame(raf);
+
+  //   // Scroll event par log add karein
+  //   lenis.on("scroll", (e: any) => {
+  //     console.debug("Scroll event:", e);
+  //   });
+
+  //   // Scroll start event par log add karein
+  //   lenis.on("scrollStart", () => {
+  //     console.log("Scroll started!");
+  //   });
+
+  //   // Scroll stop event par log add karein
+  //   lenis.on("scrollStop", () => {
+  //     console.log("Scroll stopped!");
+  //   });
+
+  //   // Cleanup function
+  //   return () => {
+  //     lenis.destroy();
+  //     console.log("Lenis destroyed!");
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   // Lenis ko initialize karein aur horizontal scrolling enable karein
+  //   const lenis = new Lenis({
+  //     duration: 1.5, // Scroll animation duration
+  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+  //     smooth: true, // Smooth scrolling enable karein
+  //     direction: "horizontal", // Horizontal scrolling enable karein
+  //   });
+
+  //   // Request Animation Frame (RAF) setup karein
+  //   function raf(time: number) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+
+  //   requestAnimationFrame(raf);
+
+  //   // Scroll event par log add karein
+  //   lenis.on("scroll", (e: any) => {
+  //     console.debug("Scroll event:", e);
+  //   });
+
+  //   // Scroll start event par log add karein
+  //   lenis.on("scrollStart", () => {
+  //     console.log("Scroll started!");
+  //   });
+
+  //   // Scroll stop event par log add karein
+  //   lenis.on("scrollStop", () => {
+  //     console.log("Scroll stopped!");
+  //   });
+
+  //   // Cleanup function
+  //   return () => {
+  //     lenis.destroy();
+  //     console.log("Lenis destroyed!");
+  //   };
+  // }, []);
+
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      duration: 4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+      gestureOrientation: "both", // Mouse aur touch gestures ke liye smooth behavior
+    });
+
+    // Request Animation Frame (RAF) setup karein
     function raf(time: number) {
-      console.log("RequestAnimationFrame running at time:", time);
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
+
     requestAnimationFrame(raf);
 
-    // GSAP Animations
-    // gsap.from(".swiper-slide", {
-    //   opacity: 0,
-    //   y: 50,
-    //   duration: 1.2,
-    //   stagger: 0.3,
-    //   ease: "power3.out",
-    // });
+    // Scroll event par log add karein
+    lenis.on("scroll", (e: any) => {
+      console.debug("Scroll event:", e);
+    });
 
-    // return () => {
-    //   console.log("lenis", lenis.destroy());
-    //   lenis.destroy();
-    // };
-  }, []);
+    // Scroll start event par log add karein
+    lenis.on("scrollStart", () => {
+      console.log("Scroll started!");
+    });
 
-  useGSAP(() => {});
+    // Scroll stop event par log add karein
+    lenis.on("scrollStop", () => {
+      console.log("Scroll stopped!");
+    });
 
-  const [, setAnimate] = useState(false);
-  useEffect(() => {
-    setAnimate(true);
-    setTimeout(() => setAnimate(false), 1000);
+    // Cleanup function
+    return () => {
+      lenis.destroy();
+      console.log("Lenis destroyed!");
+    };
   }, []);
 
   return (
@@ -1038,7 +1137,7 @@ export default function HeroBannerSlider() {
                 </div>
               </SwiperSlide>
             ))}
-            <div className="swiper-pagination2 flex justify-center gap-[7px] items-center mt-5"></div>
+            <div className="swiper-pagination2 flex justify-center gap-[6px] items-center mt-5"></div>
           </Swiper>
 
           <div className="mt-5 sm:mt-7 animate__animated animate__fadeInUp block md:hidden">

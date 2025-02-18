@@ -113,7 +113,6 @@
 
 // export default Footer;
 
-
 "use client";
 import Link from "next/link";
 import "animate.css";
@@ -136,7 +135,8 @@ const Footer = () => {
               NGO Logo
             </h2>
             <p className="text-sm mt-2">
-              QS ImpACT is a UK & Wales registered charity. Charity number 1161402
+              QS ImpACT is a UK & Wales registered charity. Charity number
+              1161402
             </p>
           </Grid>
 
@@ -161,14 +161,16 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Button variant="text" className="text-white animate__animated animate__bounceIn">
+                <Button
+                  variant="text"
+                  className="text-white animate__animated animate__bounceIn"
+                >
                   Partner with us
                 </Button>
               </li>
               <li>
                 <Link
                   href="/terms-and-conditions/"
-                  target="_blank"
                   className="hover:underline animate__animated animate__bounceIn"
                 >
                   Terms & Conditions
@@ -177,7 +179,6 @@ const Footer = () => {
               <li>
                 <Link
                   href="/privacy-policy/"
-                  target="_blank"
                   className="hover:underline animate__animated animate__bounceIn"
                 >
                   Privacy Policy
@@ -186,7 +187,6 @@ const Footer = () => {
               <li>
                 <Link
                   href="/cookie-policy/"
-                  target="_blank"
                   className="hover:underline animate__animated animate__bounceIn"
                 >
                   Cookie Policy
@@ -205,7 +205,10 @@ const Footer = () => {
                   className="hover:text-gray-400 animate__animated animate__bounce"
                 />
               </Link>
-              <Link href="https://www.linkedin.com/company/qs-impact/" target="_blank">
+              <Link
+                href="https://www.linkedin.com/company/qs-impact/"
+                target="_blank"
+              >
                 <LinkedIn
                   fontSize="large"
                   className="hover:text-gray-400 animate__animated animate__bounce"
