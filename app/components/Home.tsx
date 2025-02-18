@@ -1,6 +1,5 @@
 "use client";
-// import { useEffect, useRef } from "react";
-
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "@mui/material";
 import "swiper/css";
@@ -27,11 +26,9 @@ import thanku5 from "../../assets/thankU/company5.jpg";
 import thanku6 from "../../assets/thankU/company6.png";
 import thanku7 from "../../assets/thankU/company7.png";
 import "animate.css"; // Import Animate.css
-// import { Style } from "/Home.css";
-// import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-// import { gsap } from "gsap";
+import { gsap } from "gsap";
 import Lenis from "@studio-freight/lenis";
-// import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
@@ -77,7 +74,6 @@ import {
   MdGavel,
   MdHandshake,
 } from "react-icons/md";
-import { useEffect } from "react";
 
 const slides = [
   {
@@ -301,7 +297,7 @@ const impactsData = [
   },
 
   {
-    id: 2,
+    id: 3,
     title: "Books for School Project",
     image: community3,
     tags: ["Individual"],
@@ -320,7 +316,7 @@ const impactsData = [
   },
 
   {
-    id: 2,
+    id: 4,
     title: "Books for School Project",
     image: community4,
     tags: ["Individual"],
@@ -339,7 +335,7 @@ const impactsData = [
   },
 
   {
-    id: 2,
+    id: 5,
     title: "Books for School Project",
     image: community5,
     tags: ["Individual"],
@@ -358,7 +354,7 @@ const impactsData = [
   },
 
   {
-    id: 2,
+    id: 6,
     title: "Books for School Project",
     image: community6,
     tags: ["Individual"],
@@ -377,7 +373,7 @@ const impactsData = [
   },
 
   {
-    id: 2,
+    id: 7,
     title: "Books for School Project",
     image: community7,
     tags: ["Individual"],
@@ -516,10 +512,10 @@ export default function HeroBannerSlider() {
     const lenis = new Lenis({
       duration: 4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
-      gestureOrientation: "both", // Mouse aur touch gestures ke liye smooth behavior
+      gestureOrientation: "both", // Mouse and touch gestures for smooth behavior
     });
 
-    // Request Animation Frame (RAF) setup karein
+    // Request Animation Frame (RAF)
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -527,111 +523,111 @@ export default function HeroBannerSlider() {
 
     requestAnimationFrame(raf);
 
-    // Scroll event par log add karein
+    // Scroll event log
     lenis.on("scroll", (e: Event) => {
-      console.debug("Scroll event:", e);
+      // console.debug("Scroll event:", e);
     });
 
-    // Scroll start event par log add karein
+    // Scroll start event
     lenis.on("scrollStart", () => {
-      console.log("Scroll started!");
+      // console.log("Scroll started!");
     });
 
-    // Scroll stop event par log add karein
+    // Scroll stop event
     lenis.on("scrollStop", () => {
-      console.log("Scroll stopped!");
+      // console.log("Scroll stopped!");
     });
 
     // Cleanup function
     return () => {
       lenis.destroy();
-      console.log("Lenis destroyed!");
+      // console.log("Lenis destroyed!");
     };
   }, []);
 
   // for gsap library
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
 
-  //   // Example animation for the banner section
-  //   gsap.from(".banner-section", {
-  //     opacity: 0,
-  //     y: 50,
-  //     duration: 1,
-  //     ease: "power2.out",
-  //   });
+    // Example animation for the banner section
+    gsap.from(".banner-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+    });
 
-  //   // Example animation for the "What we do at QS ImpACT" section
-  //   gsap.from(".what-we-do-section", {
-  //     opacity: 0,
-  //     x: -50,
-  //     duration: 1,
-  //     scrollTrigger: {
-  //       trigger: ".what-we-do-section",
-  //       start: "top 80%",
-  //     },
-  //   });
+    // Example animation for the "What we do at QS ImpACT" section
+    gsap.from(".what-we-do-section", {
+      opacity: 0,
+      x: -50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".what-we-do-section",
+        start: "top 80%",
+      },
+    });
 
-  //   // Example animation for the scholarships section
-  //   gsap.from(".scholarships-section", {
-  //     opacity: 0,
-  //     y: 50,
-  //     duration: 1,
-  //     scrollTrigger: {
-  //       trigger: ".scholarships-section",
-  //       start: "top 80%",
-  //     },
-  //   });
+    // Example animation for the scholarships section
+    gsap.from(".scholarships-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".scholarships-section",
+        start: "top 80%",
+      },
+    });
 
-  //   // Example animation for the community section
-  //   gsap.from(".community-section", {
-  //     opacity: 0,
-  //     y: 50,
-  //     duration: 1,
-  //     scrollTrigger: {
-  //       trigger: ".community-section",
-  //       start: "top 80%",
-  //     },
-  //   });
+    // Example animation for the community section
+    gsap.from(".community-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".community-section",
+        start: "top 80%",
+      },
+    });
 
-  //   // Example animation for the thank you section
-  //   gsap.from(".thank-you-section", {
-  //     opacity: 0,
-  //     y: 50,
-  //     duration: 1,
-  //     scrollTrigger: {
-  //       trigger: ".thank-you-section",
-  //       start: "top 80%",
-  //     },
-  //   });
+    // Example animation for the thank you section
+    gsap.from(".thank-you-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".thank-you-section",
+        start: "top 80%",
+      },
+    });
 
-  //   // Example animation for the subscribe section
-  //   gsap.from(".subscribe-section", {
-  //     opacity: 0,
-  //     y: 50,
-  //     duration: 1,
-  //     scrollTrigger: {
-  //       trigger: ".subscribe-section",
-  //       start: "top 80%",
-  //     },
-  //   });
+    // Example animation for the subscribe section
+    gsap.from(".subscribe-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".subscribe-section",
+        start: "top 80%",
+      },
+    });
 
-  //   // Example animation for the goals section
-  //   gsap.from(".goals-section", {
-  //     opacity: 0,
-  //     y: 50,
-  //     duration: 1,
-  //     scrollTrigger: {
-  //       trigger: ".goals-section",
-  //       start: "top 80%",
-  //     },
-  //   });
-  // }, []);
+    // Example animation for the goals section
+    gsap.from(".goals-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".goals-section",
+        start: "top 80%",
+      },
+    });
+  }, []);
 
   return (
     <>
       {/*banner section */}
-      <section className=" mx-auto">
+      <section className="banner-section mx-auto">
         <style>
           {`
           :root {
@@ -691,7 +687,7 @@ export default function HeroBannerSlider() {
         </Swiper>
       </section>
       {/* What we do at QS ImpACT ---section */}
-      <section className="p-6 animate__animated animate__backInDown">
+      <section className="what-we-do-section p-6 animate__animated animate__backInDown">
         <div className="container mx-auto px-4">
           <div className="text-left mb-8">
             <div className="flex justify-between items-center mb-6 gap-4">
@@ -844,7 +840,7 @@ export default function HeroBannerSlider() {
       </section>
 
       {/* Scholarships */}
-      <section className="p-6 bg-gray-100 animate__animated animate__backInDown">
+      <section className="scholarships-section p-6 bg-gray-100 animate__animated animate__backInDown">
         <div className="container mx-auto px-4">
           <div className="text-left mb-8 animate__animated animate__bounce">
             <div className="flex flex-wrap justify-between items-center mb-6">
@@ -931,12 +927,6 @@ export default function HeroBannerSlider() {
           <div className="custom-pagination mt-4 flex justify-center"></div>
 
           <div className="mt-5 sm:mt-7 animate__animated animate__fadeInUp block md:hidden">
-            {/* <a
-              href=""
-              className="inline-block bg-blue-600 text-white text-xs sm:text-sm px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg hover:bg-blue-700 transition"
-            >
-              Explore More
-            </a> */}
             <Button
               variant="contained"
               color="primary"
@@ -953,22 +943,10 @@ export default function HeroBannerSlider() {
       </section>
 
       {/* Community */}
-      <section className="p-6 sm:py-10 bg-gray-100 animate__animated animate__fadeIn">
+      <section className="community-section p-6 sm:py-10 bg-gray-100 animate__animated animate__fadeIn">
         <div className="container mx-auto px-4 sm:px-4">
           <div className="text-left mb-4 sm:mb-6 animate__animated animate__bounce">
             <div className="flex flex-col sm:flex-row justify-between mb-3 sm:mb-5">
-              {/* <div className="relative inline-block">
-                <h1 className="text-lg sm:text-2xl font-semibold text-gray-800 relative">
-                  Our Community Impact
-                  <Image
-                    src={oppo}
-                    alt="Header Icon"
-                    // className="absolute top-0 right-[-50px] sm:right-[-72px] w-6 sm:w-8 h-6 sm:h-8"
-                    className="absolute top-0 right-[-10px] md:right-[-92px] w-7 md:w-9 h-7 md:h-9"
-                  />
-                </h1>
-              </div> */}
-
               <div className="flex items-center justify-between">
                 <h1 className="text-lg sm:text-2xl font-semibold text-gray-800 relative">
                   Our Community Impact
@@ -976,7 +954,6 @@ export default function HeroBannerSlider() {
                 <Image
                   src={oppo}
                   alt="Header Icon"
-                  // className="absolute top-0 right-[-50px] sm:right-[-72px] w-6 sm:w-8 h-6 sm:h-8"
                   className="w-7 md:w-9 h-7 md:h-9"
                 />
               </div>
@@ -985,7 +962,6 @@ export default function HeroBannerSlider() {
                 <Button
                   variant="contained"
                   color="primary"
-                  // className="rounded-md shadow-md text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
                   className="rounded-md shadow-lg text-xs md:text-sm px-4 py-2"
                 >
                   Explore More
@@ -999,7 +975,6 @@ export default function HeroBannerSlider() {
             spaceBetween={15}
             slidesPerView={1.5}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
-            // pagination={{ clickable: true }}
             pagination={{ clickable: true, el: ".swiper-pagination2" }}
             loop
             breakpoints={{
@@ -1082,12 +1057,6 @@ export default function HeroBannerSlider() {
           </Swiper>
 
           <div className="mt-5 sm:mt-7 animate__animated animate__fadeInUp block md:hidden">
-            {/* <a
-              href=""
-              className="inline-block bg-blue-600 text-white text-xs sm:text-sm px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg hover:bg-blue-700 transition"
-            >
-              Explore More
-            </a> */}
             <Button
               variant="contained"
               color="primary"
@@ -1100,7 +1069,7 @@ export default function HeroBannerSlider() {
       </section>
 
       {/* thank u */}
-      <div className="container mx-auto px-4 animate__animated animate__backInDown">
+      <div className="thank-you-section container mx-auto px-4 animate__animated animate__backInDown">
         <div style={{ height: "4rem" }}></div>
         <h1 className="text-center text-3xl font-bold mb-2 animate__animated animate__backInDown">
           Thank you to our sponsors and partners!
@@ -1151,7 +1120,7 @@ export default function HeroBannerSlider() {
 
       {/* Stay Connected! Subscribe to our newsletter */}
       <section
-        className="w-full p-6 bg-cover bg-center"
+        className="subscribe-section w-full p-6 bg-cover bg-center"
         style={{
           backgroundImage: `url(${bg1.src})`,
           backgroundSize: "cover",
@@ -1182,7 +1151,7 @@ export default function HeroBannerSlider() {
 
       {/* Goals */}
       <section
-        className="py-12 px-6 bg-cover bg-center"
+        className="goals-section py-12 px-6 bg-cover bg-center"
         style={{
           backgroundImage: `url(${bg.src})`,
           backgroundSize: "cover",
