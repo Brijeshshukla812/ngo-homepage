@@ -524,7 +524,7 @@ export default function HeroBannerSlider() {
     requestAnimationFrame(raf);
 
     // Scroll event log
-    lenis.on("scroll", (e: Event) => {
+    lenis.on("scroll", (_e: Event) => {
       // console.debug("Scroll event:", e);
     });
 
