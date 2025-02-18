@@ -1,5 +1,6 @@
 "use client";
-import { useRef } from "react";
+// import { useEffect, useRef } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "@mui/material";
 import "swiper/css";
@@ -511,145 +512,6 @@ const goalsData = [
 ];
 
 export default function HeroBannerSlider() {
-  // useEffect(() => {
-  //   const lenis = new Lenis();
-  //   function raf(time: number) {
-  //     console.log("RequestAnimationFrame running at time:", time);
-  //     lenis.raf(time);
-
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   requestAnimationFrame(raf);
-  // });
-
-  // useEffect(() => {
-  //   const lenis = new Lenis();
-  //   function raf(time: number) {
-  //     console.log("RequestAnimationFrame running at time:", time);
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-  //   requestAnimationFrame(raf);
-
-  //   // GSAP Animations
-  //   // gsap.from(".swiper-slide", {
-  //   //   opacity: 0,
-  //   //   y: 50,
-  //   //   duration: 1.2,
-  //   //   stagger: 0.3,
-  //   //   ease: "power3.out",
-  //   // });
-
-  //   // return () => {
-  //   //   console.log("lenis", lenis.destroy());
-  //   //   lenis.destroy();
-  //   // };
-  // }, []);
-
-  // useGSAP(() => {});
-
-  // const [, setAnimate] = useState(false);
-  // useEffect(() => {
-  //   setAnimate(true);
-  //   setTimeout(() => setAnimate(false), 1000);
-  // }, []);
-
-  // const lenisRef = useRef<Lenis | null>(null);
-
-  // useEffect(() => {
-  //   const lenis = new Lenis();
-
-  //   function raf(time: number) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   requestAnimationFrame(raf);
-
-  //   return () => {
-  //     lenis.destroy();
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   // Lenis ko initialize karein aur options customize karein
-  //   const lenis = new Lenis({
-  //     duration: 7.5, // Scroll animation duration
-  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
-  //     smooth: true, // Smooth scrolling enable karein
-  //     direction: "vertical", // Scroll direction (vertical ya horizontal)
-  //   });
-
-  //   // Request Animation Frame (RAF) setup karein
-  //   function raf(time: number) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   requestAnimationFrame(raf);
-
-  //   // Scroll event par log add karein
-  //   lenis.on("scroll", (e: any) => {
-  //     console.debug("Scroll event:", e);
-  //   });
-
-  //   // Scroll start event par log add karein
-  //   lenis.on("scrollStart", () => {
-  //     console.log("Scroll started!");
-  //   });
-
-  //   // Scroll stop event par log add karein
-  //   lenis.on("scrollStop", () => {
-  //     console.log("Scroll stopped!");
-  //   });
-
-  //   // Cleanup function
-  //   return () => {
-  //     lenis.destroy();
-  //     console.log("Lenis destroyed!");
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   // Lenis ko initialize karein aur horizontal scrolling enable karein
-  //   const lenis = new Lenis({
-  //     duration: 1.5, // Scroll animation duration
-  //     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
-  //     smooth: true, // Smooth scrolling enable karein
-  //     direction: "horizontal", // Horizontal scrolling enable karein
-  //   });
-
-  //   // Request Animation Frame (RAF) setup karein
-  //   function raf(time: number) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   requestAnimationFrame(raf);
-
-  //   // Scroll event par log add karein
-  //   lenis.on("scroll", (e: any) => {
-  //     console.debug("Scroll event:", e);
-  //   });
-
-  //   // Scroll start event par log add karein
-  //   lenis.on("scrollStart", () => {
-  //     console.log("Scroll started!");
-  //   });
-
-  //   // Scroll stop event par log add karein
-  //   lenis.on("scrollStop", () => {
-  //     console.log("Scroll stopped!");
-  //   });
-
-  //   // Cleanup function
-  //   return () => {
-  //     lenis.destroy();
-  //     console.log("Lenis destroyed!");
-  //   };
-  // }, []);
-
   useEffect(() => {
     const lenis = new Lenis({
       duration: 4,
@@ -686,6 +548,86 @@ export default function HeroBannerSlider() {
       console.log("Lenis destroyed!");
     };
   }, []);
+
+
+  // for gsap library
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+  
+  //   // Example animation for the banner section
+  //   gsap.from(".banner-section", {
+  //     opacity: 0,
+  //     y: 50,
+  //     duration: 1,
+  //     ease: "power2.out",
+  //   });
+  
+  //   // Example animation for the "What we do at QS ImpACT" section
+  //   gsap.from(".what-we-do-section", {
+  //     opacity: 0,
+  //     x: -50,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: ".what-we-do-section",
+  //       start: "top 80%",
+  //     },
+  //   });
+  
+  //   // Example animation for the scholarships section
+  //   gsap.from(".scholarships-section", {
+  //     opacity: 0,
+  //     y: 50,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: ".scholarships-section",
+  //       start: "top 80%",
+  //     },
+  //   });
+  
+  //   // Example animation for the community section
+  //   gsap.from(".community-section", {
+  //     opacity: 0,
+  //     y: 50,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: ".community-section",
+  //       start: "top 80%",
+  //     },
+  //   });
+  
+  //   // Example animation for the thank you section
+  //   gsap.from(".thank-you-section", {
+  //     opacity: 0,
+  //     y: 50,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: ".thank-you-section",
+  //       start: "top 80%",
+  //     },
+  //   });
+  
+  //   // Example animation for the subscribe section
+  //   gsap.from(".subscribe-section", {
+  //     opacity: 0,
+  //     y: 50,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: ".subscribe-section",
+  //       start: "top 80%",
+  //     },
+  //   });
+  
+  //   // Example animation for the goals section
+  //   gsap.from(".goals-section", {
+  //     opacity: 0,
+  //     y: 50,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       trigger: ".goals-section",
+  //       start: "top 80%",
+  //     },
+  //   });
+  // }, []);
 
   return (
     <>
