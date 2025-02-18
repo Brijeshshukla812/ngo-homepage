@@ -259,10 +259,10 @@ const impactsData = [
     image: community1,
     tags: ["Council", "Featured"],
     createdBy: [
-      {
-        name: "User 1",
-        image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
-      },
+      // {
+      //   name: "User 1",
+      //   image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
+      // },
       {
         name: "User 2",
         image: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-4.svg",
@@ -273,10 +273,10 @@ const impactsData = [
         title: "Partnerships for the goals",
         icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-16.svg",
       },
-      {
-        title: "Climate action",
-        icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-12.svg",
-      },
+      // {
+      //   title: "Climate action",
+      //   icon: "https://d3640phjran7n8.cloudfront.net/sdgs/sdg-12.svg",
+      // },
     ],
   },
 
@@ -830,7 +830,6 @@ export default function HeroBannerSlider() {
             </div>
           </div>
 
-          {/* Swiper Component */}
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={15}
@@ -917,22 +916,37 @@ export default function HeroBannerSlider() {
       <section className="p-6 sm:py-10 bg-gray-100 animate__animated animate__fadeIn">
         <div className="container mx-auto px-4 sm:px-4">
           <div className="text-left mb-4 sm:mb-6 animate__animated animate__bounce">
-            <div className="flex flex-col sm:flex-row justify-between items-center mb-3 sm:mb-5">
-              <div className="relative inline-block">
+            <div className="flex flex-col sm:flex-row justify-between mb-3 sm:mb-5">
+              {/* <div className="relative inline-block">
                 <h1 className="text-lg sm:text-2xl font-semibold text-gray-800 relative">
                   Our Community Impact
                   <Image
                     src={oppo}
                     alt="Header Icon"
-                    className="absolute top-0 right-[-50px] sm:right-[-72px] w-6 sm:w-8 h-6 sm:h-8"
+                    // className="absolute top-0 right-[-50px] sm:right-[-72px] w-6 sm:w-8 h-6 sm:h-8"
+                    className="absolute top-0 right-[-10px] md:right-[-92px] w-7 md:w-9 h-7 md:h-9"
                   />
                 </h1>
+              </div> */}
+
+              <div className="flex items-center justify-between">
+                <h1 className="text-lg sm:text-2xl font-semibold text-gray-800 relative">
+                  Our Community Impact
+                </h1>
+                <Image
+                  src={oppo}
+                  alt="Header Icon"
+                  // className="absolute top-0 right-[-50px] sm:right-[-72px] w-6 sm:w-8 h-6 sm:h-8"
+                  className="w-7 md:w-9 h-7 md:h-9"
+                />
               </div>
+
               <div className="hidden md:block">
                 <Button
                   variant="contained"
                   color="primary"
-                  className="rounded-md shadow-md text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
+                  // className="rounded-md shadow-md text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
+                  className="rounded-md shadow-lg text-xs md:text-sm px-4 py-2"
                 >
                   Explore More
                 </Button>
@@ -945,7 +959,8 @@ export default function HeroBannerSlider() {
             spaceBetween={15}
             slidesPerView={1.5}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
+            // pagination={{ clickable: true }}
+            pagination={{ clickable: true, el: ".swiper-pagination2" }}
             loop
             breakpoints={{
               480: { slidesPerView: 1.5 },
@@ -1023,6 +1038,7 @@ export default function HeroBannerSlider() {
                 </div>
               </SwiperSlide>
             ))}
+            <div className="swiper-pagination2 flex justify-center gap-[7px] items-center mt-5"></div>
           </Swiper>
 
           <div className="mt-5 sm:mt-7 animate__animated animate__fadeInUp block md:hidden">
