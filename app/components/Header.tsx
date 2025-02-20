@@ -58,7 +58,7 @@ export default function Header() {
           NGO Logo
         </Link>
 
-        <nav className="hidden md:flex gap-6 items-center">
+        <nav className="hidden md:flex gap-6 items-center animate__animated animate__backInRight">
           {["About", "Contact", "Donate", "News"].map((item, index) => (
             <MuiLink
               key={index}
@@ -95,7 +95,7 @@ export default function Header() {
 
         {/* Hamburger Button */}
         <button
-          className="md:hidden text-3xl"
+          className="md:hidden text-3xl animate__animated animate__backInRight"
           onClick={() => setIsOpen(!isOpen)}
         >
           <FiMenu />

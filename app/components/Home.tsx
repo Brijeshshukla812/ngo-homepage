@@ -510,7 +510,8 @@ const goalsData = [
 export default function HeroBannerSlider() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 4,
+      lerp: 0.9,
+      // duration: 4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
       gestureOrientation: "both", // Mouse and touch gestures for smooth behavior
     });
@@ -551,77 +552,77 @@ export default function HeroBannerSlider() {
 
     // Example animation for the banner section
     gsap.from(".banner-section", {
-      opacity: 0,
-      y: 50,
+      // opacity: 0,
+      // y: 50,
       duration: 1,
       ease: "power2.out",
     });
 
     // Example animation for the "What we do at QS ImpACT" section
-    gsap.from(".what-we-do-section", {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".what-we-do-section",
-        start: "top 80%",
-      },
-    });
+    // gsap.from(".what-we-do-section", {
+    //   opacity: 0,
+    //   x: -50,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: ".what-we-do-section",
+    //     start: "top 80%",
+    //   },
+    // });
 
-    // Example animation for the scholarships section
-    gsap.from(".scholarships-section", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".scholarships-section",
-        start: "top 80%",
-      },
-    });
+    // // Example animation for the scholarships section
+    // gsap.from(".scholarships-section", {
+    //   // opacity: 0,
+    //   // y: 50,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: ".scholarships-section",
+    //     // start: "top 80%",
+    //   },
+    // });
 
-    // Example animation for the community section
-    gsap.from(".community-section", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".community-section",
-        start: "top 80%",
-      },
-    });
+    // // Example animation for the community section
+    // gsap.from(".community-section", {
+    //   opacity: 0,
+    //   y: 50,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: ".community-section",
+    //     start: "top 80%",
+    //   },
+    // });
 
-    // Example animation for the thank you section
-    gsap.from(".thank-you-section", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".thank-you-section",
-        start: "top 80%",
-      },
-    });
+    // // Example animation for the thank you section
+    // gsap.from(".thank-you-section", {
+    //   opacity: 0,
+    //   y: 50,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: ".thank-you-section",
+    //     start: "top 80%",
+    //   },
+    // });
 
-    // Example animation for the subscribe section
-    gsap.from(".subscribe-section", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".subscribe-section",
-        start: "top 80%",
-      },
-    });
+    // // Example animation for the subscribe section
+    // gsap.from(".subscribe-section", {
+    //   opacity: 0,
+    //   y: 50,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: ".subscribe-section",
+    //     start: "top 80%",
+    //   },
+    // });
 
-    // Example animation for the goals section
-    gsap.from(".goals-section", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".goals-section",
-        start: "top 80%",
-      },
-    });
+    // // Example animation for the goals section
+    // gsap.from(".goals-section", {
+    //   opacity: 0,
+    //   y: 50,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: ".goals-section",
+    //     start: "top 80%",
+    //   },
+    // });
   }, []);
 
   return (
@@ -831,7 +832,7 @@ export default function HeroBannerSlider() {
           <div className="block md:hidden mt-4">
             <Button
               variant="contained"
-              className="shadow-lg bg-[#ffaf00] text-white hover:bg-[#e69900] w-full rounded-none "
+              className="shadow-lg text-white hover:bg-[#e69900] w-full rounded-none "
             >
               LEARN MORE ABOUT US
             </Button>
@@ -1161,7 +1162,7 @@ export default function HeroBannerSlider() {
         }}
       >
         <div className="container mx-auto px-10 pb-4 pt-24">
-          <div className="mb-8 flex justify-between items-center">
+          <div className="mb-8 flex justify-between items-center gap-4">
             <h1 className="text-3xl font-light mb-4 text-white animate__animated animate__backInLeft">
               Sustainable Development Goals
             </h1>
