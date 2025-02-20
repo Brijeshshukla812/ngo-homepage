@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    
+    "build": "npm install --legacy-peer-deps && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -33,7 +34,7 @@
     "@types/react-dom": "^19",
     "@types/react-slick": "^0.23.13",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9",
+    "eslint": "^8.57.1",
     "eslint-config-next": "^13.5.8",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
