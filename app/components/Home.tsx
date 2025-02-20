@@ -538,7 +538,6 @@ export default function HeroBannerSlider() {
     lenis.on("scrollStop", () => {
       // console.log("Scroll stopped!");
     });
-    
 
     // Cleanup function
     return () => {
